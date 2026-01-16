@@ -6,9 +6,9 @@ import WeatherCard from "./components/weatherCard";
 function App() {
   return (
     <>
-      <div>
-        <h1>Welcome to Weather App</h1>
-        <SearchBar value="Search..." onChange={() => {}} />
+      <div className="select-none">
+        <h1 className="text-2xl font-bold">Weather App</h1>
+        <SearchBar placeholder="Search City..." onChange={() => {}} />
         <Button text="Search" onClick={() => {}} />
         <WeatherCard />
       </div>

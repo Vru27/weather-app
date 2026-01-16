@@ -3,7 +3,7 @@ import React from "react";
 const WeatherCard = (props) => {
   return (
     <div>
-      <p>Get the latest weather information here!</p>
+      <p className="text-lg">Get the latest weather information here!</p>
     </div>
   );
 };
