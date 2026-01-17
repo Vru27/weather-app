@@ -16,6 +16,7 @@ function App() {
     // Fetch weather data based on the city
     if (!city) {
       setError("Please enter a city name!");
+      setWeatherData(null);
       return;
     }
     setWeatherData(null);
@@ -44,16 +45,18 @@ function App() {
               Real-time weather conditions
             </p>
           </div>
-          <div className="flex gap-2 mb-8">
+          <div className="mb-8">
+           <div className="flex gap-2">
             <SearchBar
               placeholder="Search location..."
               onChange={(e) => setCity(e.target.value)}
             />
-            {error && <ErrorMessage message={error} />}
             <Button
               text={loading ? "Loading..." : "Search"}
               onClick={handleSearch}
             />
+          </div>
+          {error && <div className="mt-2"><ErrorMessage message={error} /></div>}
           </div>
           <div className="rounded-3xl bg-white dark:bg-gray-800 shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
             <WeatherCard data={weatherData} />

@@ -7,6 +7,7 @@ export async function fetchWeatherData(city) {
     params: {
       q: city,
       appid: import.meta.env.VITE_API_KEY,
+      units: "metric",
     },
   });
   return response.data;
